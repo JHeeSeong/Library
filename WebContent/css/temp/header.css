@@ -1,0 +1,108 @@
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+/* header */	
+.header{
+	background-color:#fff;
+}
+
+/* 헤더  안에 제일 큰 div */
+.header>div {
+	position:relative;
+	width:80%;
+	min-width: 700px;
+	height:84px;
+	margin:0 auto;
+	z-index:30
+}
+
+/* 로고이미지 */
+.header h1{
+	float:left;
+	margin-top:23px;
+}
+.header h1 img{
+	vertical-align:top;
+}
+
+
+/* #headerMenu */
+#headerMenu {
+	float:right;
+	margin-top:35px;
+}
+
+#headerMenu .login{
+	float:left;
+}
+
+#headerMenu .login a{
+	color:#06603c;
+	font-size:13px;
+}
+
+#headerMenu .login a:hover{
+	text-decoration: none;
+	font-weight: bold;
+	
+}
+/* 이용안내 dropDown */
+#headerMenu .dropdown{
+	margin-left: 50px;
+	float:right;
+}
+#headerMenu>.dropdown>span{
+	cursor: pointer;
+	color:#06603c;
+	font-size:13px;
+}
+#headerMenu>.dropdown span:hover{
+	font-weight: bold;
+}
+
+#headerMenu>.dropdown>ul{
+	background-color: #fff;
+	min-width: 130px;
+	width: 130px;
+	border-radius: 1px;
+	
+}
+
+
+/* header2 */
+.header2 {
+	text-align: center;
+	height:60px;
+	background-color:#004640;
+}
+
+#divTopMenu {
+	min-width: 1040px;
+}
+#divTopMenu>ul{
+	list-style: none;
+	line-height: 60px;
+}
+
+#divTopMenu > ul > li {
+    float:left;
+    padding-left: 13%;
+}
+
+#divTopMenu > ul > li a {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#divTopMenu a:hover {
+    text-decoration: none;
+}
+
+
+
+
+
+
+

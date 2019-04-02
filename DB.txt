@@ -1,0 +1,140 @@
+--주석
+-- INSERT 
+
+--INSERT INTO TEST(필드명) VALUES(값);
+--INSERT INTO TEST VALUES(값);
+
+INSERT INTO TEST(NUM,NAME,AGE,BIRTH) VALUES(1,'IU',25,SYSDATE);
+
+INSERT INTO TEST VALUES(2,'CHOA',23,'2017/09/13');
+
+INSERT INTO TEST(NUM,NAME) VALUES(3,'HANI');
+
+UPDATE TEST SET AGE=24,BIRTH='2015/12/30' WHERE NUM=3;
+
+DELETE FROM TEST WHERE NUM=3;
+
+SELECT * FROM TEST;
+
+SELECT * FROM TEST WHERE NUM=2;
+
+COMMIT;
+ROLLBACK;
+
+select max(num) from test;
+
+insert into notice values(board_seq.nextval, 'test3','test3','test3',sysdate, 0);
+
+commit;
+
+select * from 
+(select rownum R, N.* from 
+(select * from notice order by num desc) N) where R between 1 and 10
+
+select count(num) from notice
+
+avg(NVL(num,0))
+
+-- MEMBER
+ID, PW, NAME, PHONE, AGE
+--Teacher
+ID, HIREDATE, SUBJECT, SAL
+--Student
+ID, TID, BIRTH, GRADE
+--POINT
+ID, KOR, ENG, MATH, TOTAL, AVG, YEAR, KIND 
+
+CREATE TABLE MEMBER 
+(
+  ID VARCHAR2(400) NOT NULL 
+, PW VARCHAR2(400) 
+, NAME VARCHAR2(400) 
+, PHONE VARCHAR2(400) 
+, AGE NUMBER(3) 
+, CONSTRAINT MEMBER_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+CREATE TABLE TEACHER 
+(
+  ID VARCHAR2(400) NOT NULL 
+, HIREDATE DATE 
+, SUBJECT VARCHAR2(400) 
+, SAL NUMBER(4) 
+, CONSTRAINT TEACHER_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+CREATE TABLE STUDENT 
+(
+  ID VARCHAR2(400) NOT NULL 
+, TID VARCHAR2(400) 
+, BIRTH DATE 
+, GRADE NUMBER(1) 
+, CONSTRAINT STUDENT_PK PRIMARY KEY 
+  (
+    ID 
+  )
+  ENABLE 
+);
+
+select * from member where id in ((select id from student where tid='t1'));
+
+select * from (select M.id,M.name,M.phone,S.grade,S.birth from member M,student S where S.tid='t1' and M.id=S.id) where rownum between 1 and 3;
+
+select M.id,M.name,M.phone,S.grade,S.birth from (member M,student S where S.tid=? and M.id=S.id)
+
+
+;select id,name,phone from member where id in(select id from student where tid='t1');
+
+select grade, birth from student where tid='t1';
+
+-------------join
+select 컬렴명 from 테이블명1, 테이블명2 where 테이블명1.컬럼명=테이블2.컬럼명 and 다른조건
+select * from (select rownum R, st.* from (select M.id,M.name,M.phone,S.grade,S.birth from member M,student S where M.id=S.id and S.tid='t1') st) where R between 1 and 10;
+
+select count(id) from student where tid='t1'
+
+ref = 같은 그룹
+step = 그룹 내에서 순서
+depth = 들여쓰기 양
+
+새글을 쓰는 경우
+1.ref
+  1) 부모글일 경우
+     ref = ref 자기 글번호를 ref
+  2) 답글일 경우
+     ref = 부모의 ref 부모의 ref
+2.step
+  1) 부모글일 경우
+     무조건 0
+  2) 답글일 경우
+     a. update step+1 
+       where ref==부모의ref and step>부모의 step
+     b. step=부모의 step+1
+3. depth
+   1) 부모글일 경우
+      무조건 0
+   2) 답글일 경우
+      부모의 depth+1
+
+select * from notice order by ref desc, step asc;
+
+--원본글
+insert into qna values(board_seq.nextval,'t1','t1','t1',sysdate,0,board_seq.currval,0,0);
+insert into qna values(board_seq.nextval,'t2','t2','t2',sysdate,0,board_seq.currval,0,0);
+
+--답글
+insert into qna values(board_seq.nextval,'t1_1','t3','t1_1',sysdate,0,221,1,1);
+insert into qna values(board_seq.nextval,'t2_1','t4','t2_1',sysdate,0,222,1,1);
+commit
+
+select * from (select rownum R, Q.* from (select * from qna orderby ref desc, step asc) Q) where R between 1 and 10
+
+insert into memo values(board_seq.nextval,'t21','t21',sysdate);
+
+commit

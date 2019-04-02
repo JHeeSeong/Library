@@ -1,0 +1,184 @@
+@charset "utf-8";
+
+#leftBar1 a{
+	color: #333;
+    font-weight: bold;
+}
+
+<!--상단 바 시작 -->
+
+#divContentsW{
+	background-color:#fff;
+}
+
+#divContents{
+	padding-bottom:30px;
+	margin-left:350px;
+	margin-top: 50px;
+	background-color:#fff;
+	margin-right: 200px;
+}
+
+#divTitle{
+	color:#464646;
+	display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+#divLocation{
+	min-height:20px;
+	margin:0 56px 20px 0;
+	overflow:hidden;
+}
+
+#divLocation .home{
+	list-style: none;
+	float:left;
+	padding-left:20px;
+	margin-left:13px;
+	background:url(./../../image/common/home.png) no-repeat 0 3px;
+	font-family:NG, sans-serif;
+	line-height:1.5em;
+}
+#divLocation ul li{
+	list-style: none;
+	float:left;
+	padding-left:20px;
+	margin-left:13px;
+	font-family:NG, sans-serif;
+	line-height:1.5em;
+}
+
+#divLocation ul li a{
+	color:#454545;
+}
+
+#divLocation ul li:first-child{
+	margin:0;
+	padding:0;
+	background:none;
+}
+<!--상단 바 끝 -->
+
+.revisionTable {
+    clear: both;
+    border-top: 1px solid #b3b3b3;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+.revisionTable tr th {
+    height: 40px;
+    padding: 10px 8px;
+}
+
+.revisionTable td {
+    padding: 14px 10px;
+    border-top: 1px solid #e6e6e6;
+    height: 40px;
+    text-align: left;
+}
+.revisionTable th {
+	width: 180px;
+}
+.noneBorder{
+	line-height: 24px;
+    padding: 2px 8px;
+    border: 1px solid #e6e6e6;
+}
+
+.useBorder{
+	padding:5px; 
+    border:1px solid #ccc; 
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+table th {
+    border: none;
+    background-color: #f3f3f3;
+    color: #727272;
+}
+input.btnType3 {
+    height: 30px;
+    vertical-align: top;
+    border: 1px solid #585858;
+    background-color: #fff;
+    padding: 0 10px 0 10px;
+}
+
+input.btnType4 {
+	height: 30px;
+ 	color: #666;
+    border: 1px solid #e3e3e3;
+    border-bottom-color: #c7c7c7;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    background: #fff;
+    padding: 0 10px 0 10px;
+}
+.btnType4:hover {
+    background: #f4f4f4;
+}
+.btnType5 {
+    height:38px;
+	display:inline-block;
+	margin:0 5px;
+	padding:0 19px;
+	border:1px solid #585858;
+	color:#1a1a1a;
+	font-size:14px;
+	font-weight:600;
+	line-height:38px;
+	vertical-align:top;
+	background-color:white;
+}
+.btnType5:hover {
+    background: #033823;
+    color: white;
+}
+.bottom_btn {
+	width: 1040px;
+	height: 80px;
+	margin:0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+
+input[type=text]:focus {
+    border-color:#333;
+}
+
+span>a {
+	text-decoration: none;
+}
+
+select#f{
+	width:70px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    line-height: 29px;
+}
+select#mailList{
+	width:100px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    line-height: 29px;
+}
+select.sel_size{
+	width:90px;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    background-color: #fff;
+    line-height: 29px;
+}

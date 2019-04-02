@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+<!-- 상단바 시작 -->
+#section a:hover {
+	text-decoration: none;
+}
+
+#section {
+    width: 1040px;
+    margin: 0 auto;
+/*     padding-bottom: 40px !important; */
+    background-color: #fff;
+    z-index: 5;
+}
+
+
+#section h2 {
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+#bts_top_section {
+	margin: 0 auto;
+	padding-bottom: 40px;
+}
+
+#divTitle {
+    color: #464646;
+    font-size: 32px;
+    margin-bottom: 20px;
+    padding: 40px 450px 0 0;
+}
+
+#divLocation {
+    min-height: 20px;
+    margin: 0 56px 20px 0;
+}
+
+#divLocation ul li:first-child {
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+#divLocation ul li {
+    float: left;
+    padding-left: 20px;
+    margin-left: 13px;
+	list-style: none;
+    font-family: NG, sans-serif;
+    line-height: 1.5em;
+}
+
+<!-- 상단바 끝 -->
+
+#divContent {
+    min-height: 600px;
+    margin-right: 56px;
+    padding-bottom: 40px;
+}
+
+.boardInfo {
+    position: relative;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #e6e6e6;
+    border-top: 1px solid #b3b3b3;
+}
+
+.boardInfo .boardInfoTitle {
+    padding-right: 100px;
+    color: #1a1a1a;
+    font-size: 1.429em;
+    font-weight: 600;
+}
+
+.boardInfo .writeInfo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.boardInfo .writerInfo {
+    overflow: hidden;
+}
+
+dl, dt, dd, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.boardInfo .writeInfo span {
+    position: absolute;
+    top: 31px;
+    right: 0;
+}
+
+.boardInfo .writerInfo dd {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.boardInfo .writerInfo dd.writer span {
+    color: #1a1a1a;
+}
+
+.boardInfo .writerInfo dd {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#qnaDetail_frm {
+	margin-bottom: 20px;
+}
+
+.boardContent {
+    font-family: Arial, Verdana, "Trebuchet MS", sans-serif;
+    font-size: 12px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.boardList {
+    margin-top: 20px;
+}
+
+#bottom_btns {
+	margin-bottom: 20px;
+	display: block;
+}
+
+.reply {
+    width: 92%;
+}
+
+
+
+.adv{
+height:38px;
+display:inline-block;
+margin:0 5px;
+padding:0 19px;
+border:1px solid #585858;
+color:#1a1a1a;
+font-size:14px;
+font-weight:600;
+line-height:38px;
+vertical-align:top;
+background-color:white;
+}    
+.adv:hover {
+    background: #033823;
+    color: white;
+}
+
+<!--QnA Reply-->
+#reQna td{
+	padding-bottom: 15px;
+}
+#wtd{
+	font-size:18px;
+	font-weight: bolder;
+}
+#dtd{
+	font-weight: lighter;
+	color: #585858;
+}
+.ctd{
+	width:150px;
+	font-size:15px;
+}
+.reText{
+	width:150px;
+	height:50px;
+	border: 1px solid #585858;
+	resize:none;
+}
+
+#btn1{
+	border: none;
+	background-color:white;
+	color: #585858;
+	font-weight: bold;
+}
+#btn2{
+	border: none;
+	background-color:white;
+	color: #585858;
+	font-weight: bold;
+}
+#btn3{
+	border: none;
+	background-color:white;
+	color: #585858;
+	font-weight: bold;
+}
+#btn4{
+	width:50px;
+	height:50px;
+	border: 1px solid #666;
+	background-color:white;
+	color: #666;
+	font-weight: bold;
+}
+div#reQna{
+	width: 1040px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	background-color: #f3f3f3;
+}
+
+<!-- 댓글 -->
+
+.write-wrap {
+    clear: both;
+    padding: 15px 16px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    position: relative;
+    margin: 0 auto;
+}
+
+dl.cmt_item {
+    clear: both;
+    padding: 20px 17px 16px 16px;
+    border-top: 1px solid #dedede;
+    position: relative;
+}
+
+dl.cmt_item dt span.nameui {
+    font: 12px '돋움',Dotum , Helvetica, sans-serif;
+    color: #48688f !important;
+    vertical-align: middle;
+}
+
+dl.cmt_item i {
+    margin-left: 10px;
+    color: #aaa;
+    font: 11px '돋움',Dotum, Helvetica, sans-serif;
+}
+
+dl.cmt_item dd.usertxt {
+    clear: both;
+    width: 585px;
+    padding: 7px 0 15px 0;
+    color: #434343;
+    line-height: 1.5;
+    word-break: normal;
+    word-wrap: break-word;
+}
+
+dl.cmt_item a.cmtsum {
+    display: inline-block !important;
+    zoom: 1;
+    padding-right: 22px;
+    margin: 0 6px 0 0;
+    color: #999;
+    background: url(../image/set_view.png) no-repeat;
+}

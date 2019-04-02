@@ -1,0 +1,85 @@
+﻿회원정보 수정
+[memberPwCheck.member]
+(GET) -> parameter(id) memberDTO 가져와서 입력한 pw와 비교 -> x alert("다시입력")
+(POST) o memberUpdate.jsp
+
+[memberUpdate.member]
+(GET) -> prameter(id) memberDTO 가져와서 update -> x update안함
+(POST) o 업데이트 성공
+
+[memberDelete.member] prameter(id)
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+중고장터 리스트 가져오기
+[marketDealsList.market] ->marketDealsListService
+market_Deal_DetailsDAO() -> selectList 가져오기 -> marketDealsList.jsp가기
+제목에 a href="./marketDealsDetails.market?num=?" -> marketDealDetailsViewService -> market_Deal_DetailsDAO에서 selectOne가져오기
+-> marketDealsDetails.jsp가기
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+좌석 내역 가져오기
+[seatTotalList.seat] -> SeatDetailsListService
+Seat_DetailsDAO() -> selectList 가져오기 -> seatTotalList.jsp 가기
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+대여 내역
+[bookRentList.book] -> BookRentListService
+Book_rent_detailsDAO() -> select List가져오기 -> bookRentList.jsp
+제목에 a href="./bookRentListDetails.book?num=?" -> BookRentDetailsService -> Book_rent_detailsDAO에서 selectOne가져오기
+-> bookRentDelete.book -> bookRnetDeleteService -> book_rent_DetailsDAO()에서 delete 호출
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+도서 신청 내역
+[bookOrderList.book] -> BookOrderListService -> bookOrderList.jsp
+Book_OrderDAO -> select List가져오기 -> bookOrderList.jsp
+제목에 a href="./bookOrderListDetails.book?num=?" -> BookOrderDetailsService -> Book_order_detailsDAO에서 selectOne가져오기
+Update / Delete- > 상태가 대기중일때만!
+<Update>
+bookOrderUpdate
+(GET)
+bookOrderDAO -> selectOne -> bookUpdate.jsp로 보내기
+(POST)
+bookOrderDAO -> update(BookOrderDTO) 하기
+<Delete>
+bookOrderDelete -> bookrOrderDAO.delete() 불러오기
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+찜목록-Order
+[bookOrderWishList.book] -> bookOrderWishList.book
+book_Buy_WishDAO.selectList ->bookOrderWishList.jsp
+
+<DELTE>
+bookOrderWishDelete.book -> book_Order_WishDAO.delete
+
+찜목록-Rent
+[bookRentWishList.book] -> bookRentWishList.book
+book_Buy_WishDAO.selectList ->bookRentWishList.jsp
+
+<DELTE>
+bookOrderWishDelete.book -> book_Rent_WishDAO.delete
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+QnA
+[qnaList.qna] -> qnaDAO.selectList -> qnaList.jsp
+
+<Details> 
+qnaDetailsCheck.qna -> QnaDetailsCheckService
+(GET) param=num
+qnaDetailsCheck.jsp 
+(POST)
+qnaDAO.pwCheck -> qnaDetails.jsp
+
+<Delete>
+qnaDelete.qna -> QnaDeleteService -> qnaDAO.delete
+<Update>
+qnaUpdate.qna -> QnaUpdateService
+(GET) param=qnaDTO
+qnaUpdate.jsp
+(POST)
+qnaDAO.update(qnaDTO)
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Qna_reply
+qnaReplyInsert.qnaReply -> QnaReplyInsertService -> QnaReplyInsert(parameter->num)
+<UPDATE>
+qnaReplyUpdate.qnaReply -> QnaReplyUpdateService -> QnaReplyUpdate(parameter-> rnum(댓글넘버),contents,pnum(부모넘버-글넘버)
+<DELETE>
+qnaReplyDelete.qnaReply -> QnaReplyDeleteService -> QnaReplyDelete(parameter-> ref,num
